@@ -66,7 +66,7 @@ Histogram plot of the exponential distribution n = 1000
 
           hist(sim$Mean, 
                 breaks = 50, 
-                prob = TRUE, 
+                prob = TRUE,
                 main="Exponential Distribution n = 1000",
                 xlab="Spread")
                 abline(v = theor_mean, col= 3,lwd = 2)
@@ -102,16 +102,16 @@ The theoretical variance of the population.
 
           hist(sim$Mean, 
                         breaks = 50, 
-                        prob = TRUE, 
+                        prob = TRUE,
                         main = "Exponential Distribution n = 1000", 
                         xlab = "Spread")
                         lines(density(sim$Mean))
-                        abline(v = 1/lambda, col = 3)
+                        abline(v = 1/lambda, col = 2)
                         xfit <- seq(min(sim$Mean), max(sim$Mean), length = 100)
                         yfit <- dnorm(xfit, mean = 1/lambda, sd = (1/lambda/sqrt(40)))
-                        lines(xfit, yfit, pch = 22, col = 4, lty = 2)
+                        lines(xfit, yfit, pch = 22, col = 3, lty = 2)
                         legend('topright', c("Simulated Values", "Theoretical Values"), 
-                        bty = "n", lty = c(1,2), col = c("deepskyblue", "green3"))
+                        bty = "n", lty = c(1,2), col = c(2,3))
 
 ```
 
@@ -123,7 +123,7 @@ Due to the central limit theorem, the averages of samples follow normal distribu
             qqnorm(sim$Mean, 
                             main ="Normal Q-Q Plot")
                             qqline(sim$Mean, 
-                            col = "3")
+                            col = "2")
 
 ```
 
@@ -151,21 +151,21 @@ Due to the central limit theorem, the averages of samples follow normal distribu
 
           hist(sim$Mean, 
                         breaks = 50, 
-                        prob = TRUE, 
+                        prob = TRUE,
                         main = "Exponential Distribution n = 1000", 
                         xlab = "Spread")
                         xfit <- seq(min(sim$Mean), max(sim$Mean), length = 100)
                         yfit <- dnorm(xfit, mean = 1/lambda, sd = (1/lambda/sqrt(40)))
-                        lines(xfit, yfit, pch = 22, col = 3, lwd = 2)
+                        lines(xfit, yfit, pch = 22, col = 2, lwd = 2)
                         legend('topright', c("Theoretical Curve"), 
-                        lty = 1,lwd = 2, bty = "n", col = 3)
+                        lty = 1,lwd = 2, bty = "n", col = 2)
       
 ```
 
 ```{r,fig.show='hide'}
 
           hist(sim$Mean, 
-                        breaks = 100, 
+                        breaks = 50, 
                         prob = TRUE, 
                         main = "Exponential Distribution n = 1000", 
                         xlab = "Spread")
@@ -175,7 +175,7 @@ Due to the central limit theorem, the averages of samples follow normal distribu
                         yfit <- dnorm(xfit, mean = 1/lambda, sd = (1/lambda/sqrt(40)))
                         lines(xfit, yfit, pch = 22, col = 4, lty = 2)
                         legend('topright', c("Simulated Values", "Theoretical Values"), 
-                        bty = "n", lty = c(1,2), col = c(4, 3))
+                        bty = "n", lty = c(1,2), col = c(2, 3))
 
 ```
 
