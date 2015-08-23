@@ -1,13 +1,12 @@
 ---
 title: "Statistical Inference Course Project ToothGrowth"
-author: "kuanhoong"
-date: "20th August, 2015"
+author: "Poo Kuan Hoong"
+date: "23rd August, 2015"
 output: pdf_document
 ---
 
 ```{r}
         library(dplyr)
-        library(data.table)
         library(ggplot2)
 
 ```
@@ -25,6 +24,7 @@ output: pdf_document
 ```{r}
 
           aggregate(ToothGrowth$len,list(ToothGrowth$supp,ToothGrowth$dose),mean)
+          
 
 ```
 
@@ -37,11 +37,11 @@ output: pdf_document
 
 ### Boxplot graph of the tooth length vs the does
 ```{r}
-            ggplot(ToothGrowth, aes(x = factor(dose), y = len, fill = factor(dose)))+
+             ggplot(ToothGrowth, aes(x = factor(dose), y = len, fill = factor(dose)))+
                   geom_boxplot()+
                   facet_grid(.~supp)+
-                  labs(title = "Tooth Length vs. Dose for OJ & VC",
-                  x = "Doses", y = "Tooth Length")
+                  labs(title = "Tooth Length vs. Dose  by for OJ & VC",
+                  x = "Doses", y = "Tooth Length", fill="Dose")
 
 ```
 
@@ -50,13 +50,6 @@ output: pdf_document
 ```{r}
 
             summary(ToothGrowth)
-
-```
-
-### Table view of data. 
-```{r}
-
-            table(ToothGrowth$supp,ToothGrowth$dose)
 
 ```
 
@@ -115,7 +108,7 @@ There is 95% confident that dose 0.5 and dose 1 of OJ result in longer tooth len
                   geom_boxplot()+
                   facet_grid(.~supp)+
                   labs(title = "Tooth Length vs. Dose for OJ & VC",
-                  x = "Doses", y = "Tooth Length")
+                  x = "Doses", y = "Tooth Length", fill="Dose")
 
 ```
 
